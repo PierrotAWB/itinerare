@@ -5,6 +5,7 @@ var upload = multer({dest: './uploads'});
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
+var flash = require('connect-flash');
 
 var User = require('../models/users');
 
@@ -22,10 +23,10 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login',
-  passport.authenticate('local', {failureRedirect: '/users/login'}),
+  passport.authenticate('local',{failureRedirect:'/users/login', failureFlash: 'Invalid username or password'}),
   function(req, res) {
-    res.redirect('/users/' + req.user.username);
-    res.redirect('/');
+   req.flash('success', 'You are now logged in');
+   res.redirect('/');
 });
 
 passport.serializeUser(function(user, done) {
@@ -38,23 +39,22 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy(function(username, password, done){
   User.getUserByUsername(username, function(err, user){
-    if (err) throw err;
-    if (!user) {
-      return done(null, false, {message: 'Unknown User'})
+    if(err) throw err;
+    if(!user){
+      return done(null, false, {message: 'Unknown User'});
     }
 
-    User.comparePassword(password, user.password, function(err, isMatch) {
-      if (err) return err;
-      if (isMatch) {
+    User.comparePassword(password, user.password, function(err, isMatch){
+      if(err) return done(err);
+      if(isMatch){
         return done(null, user);
       } else {
-        return done(null, false, {message: 'Invalid Password'});
+        return done(null, false, {message:'Invalid Password'});
       }
     });
   });
-
 }));
 
 router.post('/register', upload.single('profileimage') ,function(req, res, next) {
@@ -85,8 +85,16 @@ router.post('/register', upload.single('profileimage') ,function(req, res, next)
   	console.log(user);
   });
 
+  req.flash('success', 'You are now registered and can login');
+
   res.location('/');
   res.redirect('/');
+});
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  req.flash('success', 'You are now logged out');
+  res.redirect('/users/login');
 });
 
 module.exports = router;
