@@ -1,12 +1,13 @@
 extends layout
 
 block content
- h2.page-header Login
- p Please login below
+div.login-body
+ h2.page-header Hey, good to see you!
+ p.page-subheader Please login below to continue
  if errors
   each error, i in errors
    div.alert.alert-danger #{error.msg}
- form(method='post', action='/users/login')
+ form.login-form(method='post', action='/users/login')
   .form-group
    label Username
    input.form-control(name='username', type='text', placeholder='Enter Username')
