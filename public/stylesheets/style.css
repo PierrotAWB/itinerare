@@ -19,3 +19,11 @@ ul.error li{
     border-color: #ebccd1;
     list-style: none;
 }
+
+.navbar-brand {
+    width: 100%;
+}
+
+.navbar, .has-shadow, .is-spaced {
+    padding: 0 !important;
+}

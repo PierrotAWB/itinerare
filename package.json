@@ -8,9 +8,11 @@
    "dependencies": {
       "bcryptjs": "^2.4.3",
       "body-parser": "*",
+      "bulma": "^0.7.5",
       "connect-flash": "*",
       "cookie-parser": "~1.4.4",
       "debug": "~2.6.9",
+      "ejs": "^2.6.2",
       "express": "~4.16.1",
       "express-messages": "*",
       "express-session": "^1.13.0",
