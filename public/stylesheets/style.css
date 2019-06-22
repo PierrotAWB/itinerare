@@ -1,6 +1,5 @@
 ul.success li{
 	padding: 15px;
-    margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
     color: #3c763d;
@@ -11,7 +10,6 @@ ul.success li{
 
 ul.error li{
 	padding: 15px;
-    margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
  	color: #a94442;
@@ -26,18 +24,20 @@ ul.error li{
 
 .navbar, .has-shadow, .is-spaced {
     padding: 0 !important;
+    margin-bottom: auto !important;
 }
 
 div.login-body {
     margin: 0;
     padding: 0;
-    background: url(pic1.jpg);
+    background: url(../images/pic1.jpg);
     background-size: cover;
     background-position: center;
     font-family: 'sans-serif';
+    height: 100vh;
 }
 
-.login-box {
+.loginbox {
     width: 320px;
     height: 420px;
     background: #000;
@@ -59,7 +59,7 @@ div.login-body {
 }
 
 h1.login-title {
-    margin: 0;
+    margin-top: 70px;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;

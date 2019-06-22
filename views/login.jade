@@ -1,17 +1,16 @@
 extends layout
 
 block content
-div.login-body
- h2.page-header Hey, good to see you!
- p.page-subheader Please login below to continue
- if errors
-  each error, i in errors
-   div.alert.alert-danger #{error.msg}
- form.login-form(method='post', action='/users/login')
-  .form-group
-   label Username
-   input.form-control(name='username', type='text', placeholder='Enter Username')
-  .form-group
-   label Password
-   input.form-control(name='password', type='password', placeholder='Enter Password')
-  input.btn.btn-primary(type='submit', name='submit',value='Login')
+ div.login-body
+   div.loginbox
+     img.avatar(src='../images/avatar.png')
+     h1.login-title Login Here
+     if errors
+      each error, i in errors
+       div.alert.alert-danger #{error.msg}
+     form(method='post', action='/users/login')
+      p Username
+      input.form-control(name='username', type='text', placeholder='Enter Username')
+      p Password
+      input.form-control(name='password', type='password', placeholder='Enter Password')
+      input(type='submit', name='submit',value='Login')
