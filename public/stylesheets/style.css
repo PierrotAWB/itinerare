@@ -33,20 +33,22 @@ div.login-body {
     background: url(../images/pic1.jpg);
     background-size: cover;
     background-position: center;
-    font-family: 'sans-serif';
-    height: 100vh;
+    font-family: sans-serif;
+    height: 102vh;
 }
 
 .loginbox {
-    width: 320px;
+    width: 500px;
     height: 420px;
     background: #000;
     color: #fff;
-    top: 50%;
+    top: 51.5%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
+    padding: 70px 30px;
+    opacity: 0.8;
 }
 
 .avatar {
@@ -59,7 +61,6 @@ div.login-body {
 }
 
 h1.login-title {
-    margin-top: 70px;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
@@ -95,6 +96,7 @@ h1.login-title {
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
+    margin-top: 20px;
 }
 .loginbox input[type="submit"]:hover
 {
