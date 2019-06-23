@@ -150,6 +150,11 @@ h1.login-title {
     color: #fff;
 }
 
+.myInitBanner {
+    position: relative;
+  text-align: center;
+}
+
 .myItinHeading {
     position: relative;
     font-size: 60px !important;
