@@ -42,6 +42,14 @@ router.get('/myitineraries', function(req,res,next) {
   res.render('myitineraries', {title: 'My Itineraries'});
 });
 
+router.get('/community', function(req, res, next) {
+  // console.log("Test");
+  // console.log(NAME);
+  // if (NAME) {
+  res.render('community', {title: 'Travel Community'});
+  // }
+});
+
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });

@@ -22,6 +22,10 @@ var UserSchema = mongoose.Schema({
 	},
 	profileimage:{
 		type: String
+	}, 
+	posts:{
+		type: [ String ], 
+		index: true
 	}
 });
 
