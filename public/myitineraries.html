@@ -9,21 +9,70 @@
 
 <div class="columns is-desktop" id="column-box">
   <div class="column">Day 1
-    <button class="viewSchedule button is-primary" onclick="viewSchedule()" data-toggle="modal is-active" data-target="modal-day1">View Schedule</button>
+    <button class="viewSchedule button is-primary modal-button" id="day1">View Schedule</button>
   </div>
   <div class="modal" id="modal-day1">
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Modal title</p>
-          <button class="delete" aria-label="close"></button>
+          <p class="modal-card-title">Taoyuan</p>
         </header>
         <section class="modal-card-body">
           <!-- Content ... -->
+          <table class="table">
+              <thead>
+                <tr>
+                  <th><abbr title="Place">Picture</abbr></th>
+                  <th>Time</th>
+                  <th>Task</th>
+                  <th><abbr title="Location">Location</abbr></th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th><abbr title="Place">Picture</abbr></th>
+                  <th>Time</th>
+                  <th>Task</th>
+                  <th><abbr title="Location">Location</abbr></th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <tr>
+                  <th><img src="https://i.vimeocdn.com/video/541860864.webp?mw=1100&mh=619&q=70"></th>
+                  <td>Morning<strong>(M)</strong>
+                  </td>
+                  <td>Arrival at Taoyuan Airport</td>
+                  <td>23</td>
+                </tr>
+                <tr>
+                  <th><img src="https://d3hfxk7rwdcpol.cloudfront.net/CSN/ce86e193-5ddc-4409-86a8-aa86de447b57/images/cd104fce2d34483ab18e7a942f96a13e_LARGE.jpg"></th>
+                  <td>Noon <strong>(D)</strong></td>
+                  <td>Train to Fullon Hotel Taoyuan</td>
+                  <td>20</td>
+                  </tr>
+                <tr>
+                  <th><img src="https://www.mitsuioutletparkklia.com.my/assets/img/about-us-header.jpg"></th>
+                  <td>Afternoon <strong>(D)</strong></td>
+                  <td>Lunch and Shopping at Mitsui Outlet Park</td>
+                  <td>19</td>
+                  </tr>
+                <tr>
+                  <th><img src="https://lonelyplanetimages.imgix.net/a/g/hi/t/f15f7b57ab31c217f471c6712a2654e0-taipei-101.jpg"></th>
+                  <td>Evening <strong>(E)</strong></td>
+                  <td>Walk around Guishan Sports Park and Night Market</td>
+                  <td>19</td>
+                  </tr>
+                <tr>
+                  <th></th>
+                  <td>Return to Hotel</td>
+                  <td>Night <strong>(N)</strong></td>
+                  </tr>
+              </tbody>
+            </table>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-success">Save changes</button>
-          <button class="button">Cancel</button>
+          <button id="image-close" class="button is-success">Save changes</button>
+          <button id="image-modal-close" class="button">Cancel</button>
         </footer>
       </div>
     </div>
@@ -42,6 +91,15 @@
 </div>
 
 <script>
-  function viewSchedule(e) {
-  }
+  var btn = document.querySelector('#day1');
+  var imageModalCloseBtn = document.querySelector('#image-modal-close');
+  btn.addEventListener('click', function(){
+  document.querySelector("#modal-day1").classList.add('is-active');
+});
+imageModalCloseBtn.addEventListener('click', function(){
+  document.querySelector("#modal-day1").classList.remove('is-active');
+});
+document.querySelector('#image-close').addEventListener('click', function() {
+  document.querySelector('#modal-day1').classList.remove('is-active');
+});
 </script>
