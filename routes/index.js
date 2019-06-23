@@ -4,13 +4,7 @@ const url = require('url');
 
 /* GET home page. */
 router.get('/', ensureAuthenticated, function(req, res, next) {
-	NAME = req.user.name
-	res.render(url.format({
-		pathname:"/",
-		query: {
-		   "name": NAME
-		}
-	}));
+	res.render('index', {locals: { title: 'Members', name: req.user.name }});
 });
 
 function ensureAuthenticated(req, res, next){

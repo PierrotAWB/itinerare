@@ -1,10 +1,9 @@
 <div class="homeBanner">
 	<img class='homeBannerImage' src='../images/capebreton.jpg'>
-	<h1 class='homeBannerHeading'></h1>
+	<h1 class='homeBannerHeading'>Enjoy Paradise.</h1>
 	<script type="text/javascript">
-		banner = document.getElementsByClassName('homeBannerHeading')[0];
-		console.log("WTF ANDREW" + name.toString());
-		s = window.location.href.toString();
+		var banner = document.getElementsByClassName('homeBannerHeading')[0];
+		var s = window.location.href.toString();
 		if (s != 'http://localhost:3000/') banner.innerHTML = "Welcome to Itinerare, " + (s.split('=')[1]).split('%')[0] + ".";
 	</script>
 	<p class='homeBannerText'>You focus on enjoying your vacation, and we'll help preserve the memories.</p>

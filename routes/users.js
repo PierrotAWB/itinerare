@@ -14,14 +14,7 @@ var User = require('../models/users');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  // res.send('respond with a resource');
-  NAME = req.user.name;
-  res.redirect(url.format({
-       pathname:"/",
-       query: {
-          "name": NAME
-       }
-  }));
+  res.send('respond with a resource');
 });
 
 router.get('/register', function(req, res, next) {
