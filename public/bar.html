@@ -46,11 +46,14 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a href="/users/register" class="button is-primary">
+          <a id="register" href="/users/register" class="button is-primary">
             <strong>Register</strong>
           </a>
-          <a href="/users/login" class="button is-light">
+          <a id="login" href="/users/login" class="button is-light">
             Log in
+          </a>
+          <a id="logout" href="/users/logout" style="display: none;" class="button is-light">
+            Logout
           </a>
         </div>
       </div>
@@ -58,3 +61,19 @@
   </div>
   </div>
 </nav>
+
+<script>
+  window.onload = function() {
+    if(document.getElementsByClassName('success')[0].innerText == "You are now logged in") {
+    document.getElementsByClassName('is-light')[0].style.display = "none";
+    document.getElementById('register').style.display = "none";
+    document.getElementById("logout").style.display = "flex";
+   }
+
+   if(document.getElementsByClassName('success')[0].innerText == "You are now logged out") {
+    document.getElementsByClassName('is-light')[0].style.display = "flex";
+    document.getElementById('register').style.display = "flex";
+    document.getElementById("logout").style.display = "none";
+   }
+  }
+  </script>
