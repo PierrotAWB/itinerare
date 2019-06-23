@@ -15,7 +15,7 @@ var User = require('../models/users');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   // res.send('respond with a resource');
-  NAME = req.user.name
+  NAME = req.user.name;
   res.redirect(url.format({
        pathname:"/",
        query: {
@@ -43,6 +43,12 @@ router.post('/login',
           "name": NAME
        }
    }));
+});
+
+router.get('/myitineraries', function(req,res,next) {
+  if(NAME) {
+    res.render('myitineraries', {title: 'My Itineraries'});
+  }
 });
 
 passport.serializeUser(function(user, done) {

@@ -16,7 +16,7 @@
           Home
         </a>
   
-        <a href="#" class="navbar-item">
+        <a href="/users/myitineraries" class="navbar-item">
           My Itineraries
         </a>
 
@@ -64,13 +64,16 @@
 
 <script>
   window.onload = function() {
-    if(document.getElementsByClassName('success')[0].innerText == "You are now logged in") {
+    if(document.getElementsByClassName('success') && document.getElementsByClassName('success')[0].innerText == "You are now logged in") {
     document.getElementsByClassName('is-light')[0].style.display = "none";
     document.getElementById('register').style.display = "none";
     document.getElementById("logout").style.display = "flex";
    }
 
-   if(document.getElementsByClassName('success')[0].innerText == "You are now logged out") {
+   console.log(document.getElementsByClassName('success'));
+
+   if(document.getElementsByClassName('success') && document.getElementsByClassName('success')[0].innerText == "You are now logged out") {
+     console.log(document.getElementsByClassName('success'));
     document.getElementsByClassName('is-light')[0].style.display = "flex";
     document.getElementById('register').style.display = "flex";
     document.getElementById("logout").style.display = "none";
