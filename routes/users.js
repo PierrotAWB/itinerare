@@ -6,12 +6,15 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var bcrypt = require('bcryptjs');
 var flash = require('connect-flash');
+const url = require('url'); 
+
+let NAME;
 
 var User = require('../models/users');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send('respond with a resource', {name: req.user.name});
 });
 
 router.get('/register', function(req, res, next) {
@@ -26,7 +29,13 @@ router.post('/login',
   passport.authenticate('local',{failureRedirect:'/users/login', failureFlash: 'Invalid username or password'}),
   function(req, res) {
    req.flash('success', 'You are now logged in');
-   res.redirect('/');
+   NAME = req.user.name
+   res.redirect(url.format({
+       pathname:"/",
+       query: {
+          "name": NAME
+       }
+     }));
 });
 
 passport.serializeUser(function(user, done) {
@@ -57,7 +66,7 @@ passport.use(new LocalStrategy(function(username, password, done){
   });
 }));
 
-router.post('/register', upload.single('profileimage') ,function(req, res, next) {
+router.post('/register', upload.single('profileimage'), function(req, res, next) {
   var name = req.body.name;
   var email = req.body.email;
   var username = req.body.username;
