@@ -147,3 +147,55 @@ h1.login-title {
     transform: translate(-50%, -50%);
     color: #fff;
 }
+
+.myItinHeading {
+    position: relative;
+    font-size: 60px !important;
+    top: 5%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-flow: column;
+}
+
+.myItinText {
+    position: relative;
+    width: 100%;
+    top: 10%;
+}
+
+.myItinWrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.column {
+    height: 300px;
+    margin: .75rem;
+    border-radius: 2%;
+    background: #eee;
+    color: #111;
+}
+
+#column-box {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#trip-header-box {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 12%;
+}
+
+#trip-header {
+    height: 100px;
+    font-size: 24px;
+    padding: 33px;
+}
+
+.viewSchedule {
+    margin-top: 185px;
+    margin-right: 40px;
+}
+

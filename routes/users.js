@@ -39,9 +39,7 @@ router.post('/login',
 });
 
 router.get('/myitineraries', function(req,res,next) {
-  if(NAME) {
-    res.render('myitineraries', {title: 'My Itineraries'});
-  }
+  res.render('myitineraries', {title: 'My Itineraries'});
 });
 
 passport.serializeUser(function(user, done) {

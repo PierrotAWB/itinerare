@@ -1,0 +1,47 @@
+<div class="homeBanner">
+    <div class = "myItinWrapper"> 
+        <h1 class="title myItinHeading">My Itineraries</h1>
+        <p class='subtitle myItinText'>Where planning is made easy.</p>
+
+<div class="columns is-desktop" id="trip-header-box">
+  <div class="column" id="trip-header">Taiwan Trip</div>
+</div>
+
+<div class="columns is-desktop" id="column-box">
+  <div class="column">Day 1
+    <button class="viewSchedule button is-primary" onclick="viewSchedule()" data-toggle="modal is-active" data-target="modal-day1">View Schedule</button>
+  </div>
+  <div class="modal" id="modal-day1">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Modal title</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save changes</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  <div class="column">Day 2
+      <button class="viewSchedule button is-primary">View Schedule</button>
+  </div>
+  <div class="column">Day 3
+      <button class="viewSchedule button is-primary">View Schedule</button>
+  </div>
+  <div class="column">Day 4
+      <button class="viewSchedule button is-primary">View Schedule</button>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<script>
+  function viewSchedule(e) {
+  }
+</script>
