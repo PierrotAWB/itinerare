@@ -1,0 +1,35 @@
+@import '../variables';
+
+.home-banner {
+  background: $base-color;
+  color: $base-color1;
+  position: relative;
+  text-align: center;
+}
+
+.home-bannerimage {
+  opacity: .7;
+  width: 100%;
+}
+
+.home-bannerheading {
+  bottom: 60%;
+  color: $base-color1;
+  font-size: 60px;
+  margin: 0 auto;
+  position: absolute;
+  top: 32%;
+  transform: translate(0, -40%);
+  width: 100%;
+  z-index: 1;
+}
+
+.home-bannertext {
+  color: $base-color1;
+  font-size: 24px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
